@@ -59,15 +59,19 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.04;letter-spacing
 .site-header{position:fixed;top:0;left:0;right:0;z-index:70;transition:.35s;border-bottom:1px solid transparent}
 .site-header.scrolled{background:rgba(244,240,232,.92);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:78px}
-.logo{font-family:var(--disp);font-size:1.7rem;font-weight:700;letter-spacing:.01em;line-height:1}
+.logo{font-family:var(--disp);font-size:1.7rem;font-weight:700;letter-spacing:.01em;line-height:1;color:var(--cream);transition:color .35s}
 .logo b{color:var(--gold);font-weight:700}
+.site-header.scrolled .logo{color:var(--ink)}
 .nav{display:flex;gap:30px;align-items:center}
-.nav a{font-size:.82rem;font-weight:500;letter-spacing:.04em;color:var(--ink-2);position:relative;transition:.2s}
-.nav a:hover{color:var(--ink)}
-.nav .nav-cta{color:var(--ink);background:var(--gold);padding:11px 20px;border-radius:2px;font-weight:600}
+.nav a{font-size:.82rem;font-weight:500;letter-spacing:.04em;color:rgba(244,240,232,.8);position:relative;transition:.2s}
+.nav a:hover{color:var(--cream)}
+.site-header.scrolled .nav a{color:var(--ink-2)}
+.site-header.scrolled .nav a:hover{color:var(--ink)}
+.nav .nav-cta,.site-header.scrolled .nav .nav-cta{color:var(--ink);background:var(--gold);padding:11px 20px;border-radius:2px;font-weight:600}
 .nav .nav-cta:hover{background:var(--gold-deep);color:var(--cream)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:80}
-.nav-toggle span{width:26px;height:1.8px;background:var(--ink);transition:.3s}
+.nav-toggle span{width:26px;height:1.8px;background:var(--cream);transition:.3s}
+.site-header.scrolled .nav-toggle span,.nav-toggle.open span{background:var(--ink)}
 
 /* hero */
 .hero{background:var(--ink);color:var(--cream);position:relative;overflow:hidden;padding:150px 0 100px}
@@ -257,7 +261,8 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.04;letter-spacing
   .container{padding:0 22px}
   .nav{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:26px;background:var(--porcelain);transform:translateX(100%);transition:.35s}
   .nav.open{transform:none}
-  .nav a{font-size:1.05rem}
+  .nav a{font-size:1.05rem;color:var(--ink)}
+  .site-header .nav a:hover{color:var(--gold)}
   .nav-toggle{display:flex}
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .nav-toggle.open span:nth-child(2){opacity:0}
