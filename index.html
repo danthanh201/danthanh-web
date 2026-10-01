@@ -75,17 +75,18 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.04;letter-spacing
 /* hero */
 .hero{background:var(--ink);color:var(--cream);position:relative;overflow:hidden;padding:150px 0 100px}
 .hero::before{content:"";position:absolute;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(176,137,75,.22),transparent 65%);top:-220px;right:-180px}
-.hero-grid{display:grid;grid-template-columns:1fr 1.04fr;gap:52px;align-items:stretch;position:relative;z-index:2}
+.hero .container{position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1fr 1.04fr;gap:52px;align-items:stretch}
 .hero .eyebrow{color:var(--gold)}
 .hero h1{font-size:clamp(2.9rem,6.5vw,5.3rem);font-weight:600}
 .hero h1 .w{color:var(--gold)}
 .hero .lead{font-size:1.18rem;color:rgba(244,240,232,.78);max-width:46ch;margin:28px 0 36px;font-family:var(--body);line-height:1.65}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:30px;border-top:1px solid rgba(244,240,232,.15)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;margin-top:0;padding-top:30px;border-top:1px solid rgba(244,240,232,.15)}
 .hero-stats b{font-family:var(--disp);font-size:2.2rem;font-weight:700;color:var(--gold);display:block;line-height:1}
 .hero-stats span{font-size:.78rem;color:rgba(244,240,232,.65);letter-spacing:.03em}
 .hero-portrait{position:relative}
-.portrait-frame{aspect-ratio:4/5;height:100%;border:1px solid var(--line-gold);border-radius:22px;overflow:hidden;position:relative;
+.portrait-frame{height:100%;min-height:320px;border:1px solid var(--line-gold);border-radius:22px;overflow:hidden;position:relative;
   background:linear-gradient(160deg,#3a3028,#201c17);box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;z-index:2}
 .portrait-frame .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:rgba(176,137,75,.9);z-index:1}
@@ -295,19 +296,15 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.04;letter-spacing
 
 <!-- 1. HERO -->
 <section class="hero" id="top">
-  <div class="container hero-grid">
+  <div class="container">
+    <div class="eyebrow reveal">Nguyễn Khắc Đan Thanh</div>
+    <div class="hero-grid">
     <div class="hero-text reveal">
-      <div class="eyebrow">Nguyễn Khắc Đan Thanh</div>
       <h1>Giúp bạn <span class="w">đẹp</span>,<br><span class="w">giàu</span> &amp; <span class="w">kỷ luật</span><br>ở tuổi 32.</h1>
       <p class="lead">Hành trình xây dựng phiên bản tốt nhất của chính mình — về ngoại hình, tài chính và kỷ luật sống. Mình chia sẻ công cụ, sản phẩm và cơ hội hợp tác để bạn bắt đầu ngay hôm nay.</p>
       <div class="hero-actions">
         <a href="detail.html?item=hop-tac" class="btn btn-gold">Hợp tác cùng Thanh <span class="arw">→</span></a>
         <a href="#products" class="btn btn-line on-dark">Khám phá sản phẩm</a>
-      </div>
-      <div class="hero-stats">
-        <div><b>1 triệu+</b><span>người theo dõi</span></div>
-        <div><b>500+</b><span>học viên &amp; đối tác</span></div>
-        <div><b>50+</b><span>nhãn hàng hợp tác</span></div>
       </div>
     </div>
     <div class="hero-portrait reveal">
@@ -316,6 +313,12 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.04;letter-spacing
         <div class="ph"><span class="mono">ĐT</span><small>Ảnh chân dung</small></div>
       </div>
       <div class="portrait-tag"><b>Est. 32</b><span>Đẹp · Giàu · Kỷ luật</span></div>
+    </div>
+    </div>
+    <div class="hero-stats reveal">
+      <div><b>1 triệu+</b><span>người theo dõi</span></div>
+      <div><b>500+</b><span>học viên &amp; đối tác</span></div>
+      <div><b>50+</b><span>nhãn hàng hợp tác</span></div>
     </div>
   </div>
 </section>
