@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Đan Thanh — Chi tiết</title>
+<meta name="description" content="Thông tin chi tiết về dịch vụ, sản phẩm và cơ hội hợp tác cùng Nguyễn Khắc Đan Thanh." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23201C17'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='56' font-weight='700' text-anchor='middle' fill='%23B0894B'%3EĐ%3C/text%3E%3C/svg%3E" />
+<style>
+@font-face{font-family:"Parkinsans";src:url("fonts/Parkinsans-Bold.ttf") format("truetype");font-weight:400 800;font-display:swap}
+@font-face{font-family:"Youth";src:url("fonts/Youth-Regular.ttf") format("truetype");font-weight:400 600;font-display:swap}
+:root{
+  --porcelain:#f4f0e8;--porcelain-2:#ece5d8;--ink:#201c17;--ink-2:#574e44;
+  --gold:#b0894b;--gold-deep:#8a6734;--wine:#6e2a39;--blush:#e7d6cd;--cream:#f4f0e8;
+  --line:rgba(32,28,23,.14);--line-gold:rgba(176,137,75,.4);--max:1120px;
+  --disp:"Parkinsans","Inter",system-ui,sans-serif;--body:"Youth","Inter",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--porcelain);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.05;letter-spacing:.005em}
+::selection{background:var(--gold);color:var(--ink)}
+.eyebrow{font-family:var(--body);text-transform:uppercase;letter-spacing:.24em;font-size:.72rem;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;font-family:var(--body);font-weight:600;font-size:.88rem;transition:.25s;cursor:pointer;border:1.5px solid var(--gold);border-radius:2px}
+.btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-deep);color:var(--cream);transform:translateY(-2px)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.btn-line.on-dark{color:var(--cream);border-color:rgba(244,240,232,.5)}
+.btn-line.on-dark:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(244,240,232,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-family:var(--disp);font-size:1.5rem;font-weight:700}
+.logo b{color:var(--gold)}
+.back{font-size:.82rem;color:var(--ink-2);display:inline-flex;align-items:center;gap:8px}
+.back:hover{color:var(--gold)}
+
+/* hero */
+.d-hero{background:var(--ink);color:var(--cream);padding:70px 0 64px;position:relative;overflow:hidden}
+.d-hero::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(176,137,75,.2),transparent 65%);top:-200px;right:-160px}
+.d-hero .inner{position:relative;z-index:2;max-width:760px}
+.d-hero .eyebrow{color:var(--gold)}
+.d-hero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:20px}
+.d-hero .intro{font-size:1.18rem;color:rgba(244,240,232,.82);line-height:1.6;max-width:62ch}
+.d-hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+/* price */
+.pricebar{background:var(--porcelain-2);border-bottom:1px solid var(--line)}
+.pricebar .inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:24px 0}
+.pricebar .now{font-family:var(--disp);font-size:2.2rem;font-weight:700;color:var(--wine)}
+.pricebar .old{font-size:1.1rem;color:var(--ink-2);text-decoration:line-through}
+.pricebar .save{background:var(--wine);color:var(--cream);font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:2px}
+.pricebar .btn{margin-left:auto}
+
+/* sections */
+.sec{padding:70px 0}
+.sec h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.sec .lead{color:var(--ink-2);max-width:60ch;margin-bottom:40px}
+.benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.ben{border:1px solid var(--line);border-radius:3px;padding:28px 26px;background:var(--porcelain);transition:.25s}
+.ben:hover{border-color:var(--line-gold);box-shadow:0 18px 40px -26px rgba(32,28,23,.26)}
+.ben .num{font-family:var(--body);font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.ben h3{font-size:1.3rem;margin-bottom:8px}
+.ben p{color:var(--ink-2);font-size:.95rem}
+
+/* steps */
+.steps{background:var(--porcelain-2)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.step{text-align:center;padding:10px}
+.step .c{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:1.3rem;margin:0 auto 18px}
+.step h3{font-size:1.25rem;margin-bottom:8px}
+.step p{color:var(--ink-2);font-size:.92rem;max-width:34ch;margin:0 auto}
+
+/* contact */
+.contact{background:var(--wine);color:var(--cream);text-align:center}
+.contact .inner{max-width:640px;margin:0 auto}
+.contact .eyebrow{color:var(--blush);justify-content:center}
+.contact .eyebrow::before{background:var(--blush)}
+.contact h2{color:var(--cream);font-size:clamp(2rem,4.5vw,3rem)}
+.contact p{color:rgba(244,240,232,.85);margin:16px 0 32px;font-size:1.08rem}
+.contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.contact .btn-gold{background:var(--gold);border-color:var(--gold)}
+.contact .btn-gold:hover{background:var(--cream);border-color:var(--cream);color:var(--ink)}
+.contact .btn-line{color:var(--cream);border-color:rgba(244,240,232,.55)}
+.contact .btn-line:hover{background:var(--cream);color:var(--wine);border-color:var(--cream)}
+
+/* footer */
+.ft{background:var(--ink);color:rgba(244,240,232,.6);padding:34px 0;text-align:center;font-size:.85rem}
+.ft a{color:var(--gold)}
+
+@media(max-width:760px){
+  .benefits,.steps-grid{grid-template-columns:1fr}
+  .pricebar .btn{margin-left:0;width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Đan Thanh<b>.</b></a>
+    <a href="index.html" class="back">← Về trang chủ</a>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<section class="contact" id="contact">
+  <div class="container inner">
+    <div class="eyebrow">Liên hệ ngay</div>
+    <h2 id="cta-title">Sẵn sàng bắt đầu cùng Thanh?</h2>
+    <p id="cta-sub">Để lại tin nhắn, Thanh sẽ phản hồi và tư vấn cho bạn trong thời gian sớm nhất.</p>
+    <div class="contact-actions">
+      <a href="#" class="btn btn-gold" data-zalo>Nhắn Zalo / Messenger →</a>
+      <a href="tel:+84" class="btn btn-line">Gọi điện</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="container">© <span id="year"></span> Nguyễn Khắc Đan Thanh · <a href="index.html">Trang chủ</a> · Đẹp · Giàu · Kỷ luật</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const DATA={
+ "hop-tac":{kind:"Dịch vụ",title:"Hợp tác kinh doanh cùng Đan Thanh",
+  intro:"Cùng xây dựng chiến dịch tiếp thị liên kết và phát triển nhãn hàng — minh bạch, hiệu quả và đôi bên cùng có lợi.",
+  cta:{text:"Nhắn Zalo để hợp tác"},
+  benefits:[
+   {h:"Tiếp cận đúng tệp khách",p:"Cộng đồng hơn 1 triệu người quan tâm làm đẹp, tài chính và phát triển bản thân."},
+   {h:"Nội dung chuyển đổi cao",p:"Review chân thật, kịch bản bán hàng đã được kiểm chứng qua nhiều chiến dịch."},
+   {h:"Phủ đa nền tảng",p:"TikTok, Facebook, Instagram, YouTube và landing page riêng cho nhãn hàng."},
+   {h:"Báo cáo minh bạch",p:"Số liệu hiệu quả rõ ràng, cam kết kết quả sau mỗi chiến dịch."}],
+  steps:[["Nhắn tin","Gửi thông tin nhãn hàng & mục tiêu chiến dịch."],["Lên kế hoạch","Thanh đề xuất gói hợp tác & nội dung phù hợp."],["Triển khai","Chạy chiến dịch và nhận báo cáo kết quả."]]},
+
+ "co-van":{kind:"Dịch vụ",title:"Cố vấn doanh nghiệp & thương hiệu cá nhân",
+  intro:"Đồng hành cùng chủ doanh nghiệp vừa và nhỏ xây dựng thương hiệu, hệ thống bán hàng và tăng trưởng bền vững.",
+  cta:{text:"Đặt lịch tư vấn"},
+  benefits:[
+   {h:"Định vị thương hiệu",p:"Tìm ra điểm khác biệt và thông điệp cốt lõi cho doanh nghiệp của bạn."},
+   {h:"Chiến lược nội dung & bán hàng",p:"Lộ trình nội dung và phễu bán hàng giúp tăng chuyển đổi."},
+   {h:"Xây kênh KOL/KOC",p:"Hướng dẫn phát triển kênh và cộng đồng trung thành."},
+   {h:"Đồng hành 1-1",p:"Cố vấn riêng theo tình hình thực tế của từng doanh nghiệp."}],
+  steps:[["Khảo sát","Thanh tìm hiểu hiện trạng & mục tiêu của bạn."],["Chiến lược","Nhận lộ trình & kế hoạch hành động cụ thể."],["Đồng hành","Triển khai và tối ưu theo từng giai đoạn."]]},
+
+ "khoa-hoc":{kind:"Khoá học",title:"Các khoá học của Đan Thanh",
+  intro:"Khoá học thực chiến về kỷ luật bản thân, tài chính cá nhân và xây dựng hình ảnh — học xong áp dụng được ngay.",
+  price:{now:"Từ 499.000₫",old:"999.000₫",save:"Ưu đãi có hạn"},
+  cta:{text:"Đăng ký khoá học"},
+  benefits:[
+   {h:"Kỷ luật & thói quen",p:"Xây dựng hệ thống thói quen bền vững trong 90 ngày."},
+   {h:"Tài chính cá nhân",p:"Quản lý thu chi, tiết kiệm và bắt đầu tạo thu nhập thêm."},
+   {h:"Xây dựng hình ảnh",p:"Phong cách, nội dung và thương hiệu cá nhân từ con số 0."},
+   {h:"Học trọn đời",p:"Tài liệu, video và cộng đồng hỗ trợ không giới hạn thời gian."}],
+  steps:[["Đăng ký","Chọn khoá học phù hợp và thanh toán."],["Vào học","Truy cập bài giảng & tài liệu ngay lập tức."],["Áp dụng","Thực hành theo lộ trình và nhận hỗ trợ."]]},
+
+ "booking":{kind:"Booking",title:"Booking Đan Thanh",
+  intro:"Mời Thanh làm diễn giả, KOL/KOC cho sự kiện, chiến dịch truyền thông và các hoạt động của nhãn hàng.",
+  cta:{text:"Gửi yêu cầu booking"},
+  benefits:[
+   {h:"Diễn giả sự kiện",p:"Chia sẻ truyền cảm hứng về kỷ luật, tài chính và phát triển bản thân."},
+   {h:"KOL/KOC review",p:"Trải nghiệm & review sản phẩm chân thật, đúng tệp khách hàng."},
+   {h:"Chiến dịch truyền thông",p:"Đồng hành cùng nhãn hàng trong các chiến dịch dài hạn."},
+   {h:"Hợp tác linh hoạt",p:"Nhiều hình thức & mức ngân sách phù hợp với bạn."}],
+  steps:[["Gửi yêu cầu","Cung cấp thời gian, hình thức & ngân sách."],["Xác nhận","Thanh phản hồi & chốt lịch cùng bạn."],["Thực hiện","Tham gia sự kiện/chiến dịch theo kế hoạch."]]},
+
+ "hoc-tap":{kind:"Đồ dùng chất lượng",title:"Đồ dùng học tập được Thanh tuyển chọn",
+  intro:"Những món đồ giúp bạn tập trung, kỷ luật và học tập hiệu quả hơn mỗi ngày — đều được Thanh dùng và tin tưởng.",
+  cta:{text:"Xem & đặt mua"},
+  benefits:[
+   {h:"Sổ kế hoạch & planner",p:"Công cụ lên kế hoạch và theo dõi mục tiêu mỗi ngày."},
+   {h:"Dụng cụ viết cao cấp",p:"Bút, sổ và phụ kiện bàn làm việc chất lượng."},
+   {h:"Thiết bị hỗ trợ",p:"Đèn học, giá đỡ, phụ kiện giúp tập trung hơn."},
+   {h:"Đã kiểm chứng",p:"Chỉ giới thiệu món Thanh thật sự sử dụng."}],
+  steps:[["Chọn món","Lướt qua các gợi ý được tuyển chọn."],["Nhắn tin","Hỏi thêm hoặc nhận link mua tốt nhất."],["Nhận hàng","Đặt mua và trải nghiệm."]]},
+
+ "thoi-trang":{kind:"Đồ dùng chất lượng",title:"Thời trang & phụ kiện Thanh yêu thích",
+  intro:"Phong cách tối giản, thanh lịch và bền đẹp — những món giúp bạn tự tin và cuốn hút hơn.",
+  cta:{text:"Xem & đặt mua"},
+  benefits:[
+   {h:"Trang phục tối giản",p:"Dễ phối, hợp nhiều hoàn cảnh, tôn dáng."},
+   {h:"Phụ kiện tinh tế",p:"Túi, trang sức và phụ kiện nâng tầm set đồ."},
+   {h:"Chất liệu bền đẹp",p:"Ưu tiên chất lượng và độ bền theo thời gian."},
+   {h:"Gu đã chọn lọc",p:"Theo phong cách riêng của Thanh."}],
+  steps:[["Chọn món","Lướt qua các gợi ý được tuyển chọn."],["Nhắn tin","Hỏi size & nhận link mua tốt nhất."],["Nhận hàng","Đặt mua và trải nghiệm."]]},
+
+ "my-pham":{kind:"Đồ dùng chất lượng",title:"Mỹ phẩm & chăm sóc da",
+  intro:"Những sản phẩm làm đẹp Thanh tin dùng — an toàn, hiệu quả và phù hợp cho làn da Việt.",
+  cta:{text:"Xem & đặt mua"},
+  benefits:[
+   {h:"Chăm sóc da",p:"Routine dưỡng da sáng khỏe từ cơ bản đến chuyên sâu."},
+   {h:"Trang điểm",p:"Sản phẩm trang điểm tự nhiên, dễ dùng hằng ngày."},
+   {h:"Thành phần an toàn",p:"Ưu tiên bảng thành phần lành tính, rõ nguồn gốc."},
+   {h:"Đã trải nghiệm",p:"Review thật sau thời gian sử dụng."}],
+  steps:[["Chọn món","Lướt qua các gợi ý được tuyển chọn."],["Nhắn tin","Hỏi tư vấn & nhận link mua tốt nhất."],["Nhận hàng","Đặt mua và trải nghiệm."]]},
+
+ "suc-khoe":{kind:"Đồ dùng chất lượng",title:"Sức khoẻ & lối sống lành mạnh",
+  intro:"Thực phẩm bổ sung và sản phẩm chăm sóc sức khoẻ giúp bạn khoẻ đẹp từ bên trong.",
+  cta:{text:"Xem & đặt mua"},
+  benefits:[
+   {h:"Thực phẩm bổ sung",p:"Vitamin, collagen và các sản phẩm hỗ trợ sức khoẻ."},
+   {h:"Dụng cụ tập luyện",p:"Phụ kiện giúp duy trì vận động mỗi ngày."},
+   {h:"Nguồn gốc rõ ràng",p:"Ưu tiên thương hiệu uy tín, có kiểm định."},
+   {h:"Đồng hành kỷ luật",p:"Kết hợp cùng thói quen sống lành mạnh."}],
+  steps:[["Chọn món","Lướt qua các gợi ý được tuyển chọn."],["Nhắn tin","Hỏi tư vấn & nhận link mua tốt nhất."],["Nhận hàng","Đặt mua và trải nghiệm."]]},
+
+ "sp-serum":{kind:"Sản phẩm",title:"Serum dưỡng sáng da",
+  intro:"Dưỡng chất giúp làn da sáng mịn, đều màu và căng khoẻ — item không thể thiếu trong routine của Thanh.",
+  price:{now:"349.000₫",old:"499.000₫",save:"-30%"},
+  cta:{text:"Mua ngay"},
+  benefits:[
+   {h:"Dưỡng sáng rõ rệt",p:"Cải thiện tông da và vết thâm sau vài tuần."},
+   {h:"Cấp ẩm sâu",p:"Giữ da căng mọng, mềm mịn suốt ngày dài."},
+   {h:"Thành phần lành tính",p:"Phù hợp cả da nhạy cảm."},
+   {h:"Cam kết chính hãng",p:"Sản phẩm chính hãng, đổi trả rõ ràng."}],
+  steps:[["Chọn sản phẩm","Xem thông tin & công dụng."],["Đặt mua","Bấm Mua ngay hoặc nhắn Thanh."],["Nhận & dùng","Nhận hàng và bắt đầu routine."]]},
+
+ "sp-sokettoan":{kind:"Sản phẩm",title:"Sổ kế hoạch kỷ luật 90 ngày",
+  intro:"Người bạn đồng hành giúp bạn biến mục tiêu thành thói quen trong 90 ngày.",
+  price:{now:"199.000₫",old:"259.000₫",save:"Hot"},
+  cta:{text:"Mua ngay"},
+  benefits:[
+   {h:"Khung 90 ngày",p:"Lộ trình rõ ràng theo tuần và ngày."},
+   {h:"Theo dõi thói quen",p:"Bảng habit tracker trực quan."},
+   {h:"Trang phản tư",p:"Ghi lại tiến bộ và bài học mỗi tuần."},
+   {h:"Thiết kế đẹp, bền",p:"Giấy tốt, bìa cứng, dùng lâu dài."}],
+  steps:[["Chọn sản phẩm","Xem thông tin & công dụng."],["Đặt mua","Bấm Mua ngay hoặc nhắn Thanh."],["Bắt đầu","Lên kế hoạch 90 ngày của bạn."]]},
+
+ "sp-tui":{kind:"Sản phẩm",title:"Túi tote da tối giản",
+  intro:"Thiết kế thanh lịch, dung tích rộng — phù hợp đi làm, đi học và mọi hoàn cảnh.",
+  price:{now:"589.000₫",old:"790.000₫",save:"Mới"},
+  cta:{text:"Mua ngay"},
+  benefits:[
+   {h:"Da bền đẹp",p:"Chất liệu cao cấp, form dáng chắc chắn."},
+   {h:"Tối giản, dễ phối",p:"Hợp nhiều phong cách và trang phục."},
+   {h:"Ngăn rộng tiện lợi",p:"Đựng laptop, sổ sách và vật dụng hằng ngày."},
+   {h:"Cam kết chính hãng",p:"Sản phẩm chính hãng, đổi trả rõ ràng."}],
+  steps:[["Chọn sản phẩm","Xem thông tin & công dụng."],["Đặt mua","Bấm Mua ngay hoặc nhắn Thanh."],["Nhận hàng","Nhận và sử dụng."]]},
+
+ "sp-collagen":{kind:"Sản phẩm",title:"Viên uống collagen",
+  intro:"Bổ sung collagen giúp da căng mịn, tóc và móng chắc khoẻ từ bên trong.",
+  price:{now:"459.000₫",old:"620.000₫",save:"Best"},
+  cta:{text:"Mua ngay"},
+  benefits:[
+   {h:"Đẹp từ bên trong",p:"Hỗ trợ da căng mịn, giảm lão hoá."},
+   {h:"Tóc & móng khoẻ",p:"Bổ sung dưỡng chất thiết yếu mỗi ngày."},
+   {h:"Dễ uống, tiện lợi",p:"Liều dùng đơn giản, phù hợp lịch bận rộn."},
+   {h:"Nguồn gốc rõ ràng",p:"Thương hiệu uy tín, có kiểm định."}],
+  steps:[["Chọn sản phẩm","Xem thông tin & công dụng."],["Đặt mua","Bấm Mua ngay hoặc nhắn Thanh."],["Nhận & dùng","Nhận hàng và dùng đều đặn."]]},
+
+ "san-pham":{kind:"Sản phẩm",title:"Tất cả sản phẩm tuyển chọn",
+  intro:"Toàn bộ sản phẩm Thanh dùng và tin tưởng — chia theo từng nhóm để bạn dễ chọn.",
+  cta:{text:"Nhắn Thanh để được tư vấn"},
+  benefits:[
+   {h:"Mỹ phẩm",p:"Chăm sóc da & trang điểm an toàn, hiệu quả."},
+   {h:"Học tập",p:"Planner, sổ sách và dụng cụ tập trung."},
+   {h:"Thời trang",p:"Trang phục & phụ kiện tối giản, thanh lịch."},
+   {h:"Sức khoẻ",p:"Thực phẩm bổ sung & dụng cụ tập luyện."}],
+  steps:[["Chọn nhóm","Xác định bạn cần gì."],["Nhắn tin","Nhận tư vấn & link mua tốt nhất."],["Nhận hàng","Đặt mua và trải nghiệm."]]},
+
+ "chia-se":{kind:"Chia sẻ",title:"Chia sẻ hằng ngày cùng Đan Thanh",
+  intro:"Mỗi ngày một bài học ngắn về kỷ luật, tài chính và lối sống đẹp — theo dõi để không bỏ lỡ.",
+  cta:{text:"Theo dõi Thanh"},
+  benefits:[
+   {h:"Kỷ luật mỗi ngày",p:"Thói quen nhỏ tạo ra thay đổi lớn."},
+   {h:"Tài chính thông minh",p:"Mẹo quản lý tiền dễ áp dụng."},
+   {h:"Lối sống đẹp",p:"Chăm sóc bản thân từ trong ra ngoài."},
+   {h:"Cộng đồng cùng tiến",p:"Đồng hành cùng hàng nghìn người."}],
+  steps:[["Theo dõi","Kết nối trên các nền tảng của Thanh."],["Học mỗi ngày","Nhận chia sẻ & cảm hứng thường xuyên."],["Hành động","Áp dụng và chia sẻ kết quả."]]},
+
+ "lien-he":{kind:"Liên hệ",title:"Liên hệ & Booking cùng Đan Thanh",
+  intro:"Dù là hợp tác kinh doanh, cố vấn, khoá học hay booking — chỉ một tin nhắn để bắt đầu.",
+  cta:{text:"Nhắn Zalo / Messenger"},
+  benefits:[
+   {h:"Hợp tác kinh doanh",p:"Dành cho nhãn hàng & đối tác TTLK."},
+   {h:"Cố vấn doanh nghiệp",p:"Dành cho chủ doanh nghiệp vừa & nhỏ."},
+   {h:"Khoá học",p:"Dành cho người muốn phát triển bản thân."},
+   {h:"Booking & KOL/KOC",p:"Dành cho sự kiện & chiến dịch truyền thông."}],
+  steps:[["Nhắn tin","Gửi nhu cầu của bạn qua Zalo/Messenger."],["Tư vấn","Thanh phản hồi & tư vấn phù hợp."],["Bắt đầu","Cùng nhau triển khai."]]}
+};
+
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function getSlug(){return new URLSearchParams(location.search).get("item")||"lien-he";}
+const d=DATA[getSlug()]||DATA["lien-he"];
+document.title="Đan Thanh — "+d.title;
+
+let html="";
+html+=`<section class="d-hero"><div class="container inner">
+  <div class="eyebrow">${esc(d.kind)}</div>
+  <h1>${esc(d.title)}</h1>
+  <p class="intro">${esc(d.intro)}</p>
+  <div class="actions"><a href="#contact" class="btn btn-gold">${esc(d.cta.text)} →</a>
+  <a href="index.html" class="btn btn-line on-dark">Về trang chủ</a></div>
+</div></section>`;
+
+if(d.price){html+=`<div class="pricebar"><div class="container inner">
+  <span class="now">${esc(d.price.now)}</span>${d.price.old?`<span class="old">${esc(d.price.old)}</span>`:""}
+  ${d.price.save?`<span class="save">${esc(d.price.save)}</span>`:""}
+  <a href="#contact" class="btn btn-gold">${esc(d.cta.text)} →</a></div></div>`;}
+
+if(d.benefits){html+=`<section class="sec"><div class="container">
+  <div class="eyebrow">Bạn nhận được gì</div><h2>Điểm nổi bật</h2>
+  <div class="benefits">`+d.benefits.map((b,i)=>`<div class="ben"><div class="num">0${i+1}</div><h3>${esc(b.h)}</h3><p>${esc(b.p)}</p></div>`).join("")+`</div></div></section>`;}
+
+if(d.steps){html+=`<section class="sec steps"><div class="container">
+  <div class="eyebrow">Cách bắt đầu</div><h2>Chỉ 3 bước đơn giản</h2>
+  <div class="steps-grid">`+d.steps.map((s,i)=>`<div class="step"><div class="c">${i+1}</div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>`).join("")+`</div></div></section>`;}
+
+document.getElementById("app").innerHTML=html;
+document.getElementById("cta-sub").textContent="Chọn \""+d.cta.text+"\" hoặc để lại tin nhắn — Thanh sẽ phản hồi sớm nhất.";
+</script>
+</body>
+</html>
