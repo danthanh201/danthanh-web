@@ -61,6 +61,19 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.05;letter-spacing
 .sec{padding:70px 0}
 .sec h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
 .sec .lead{color:var(--ink-2);max-width:60ch;margin-bottom:40px}
+.sub-h{font-size:clamp(1.5rem,3.2vw,2.3rem);margin-bottom:26px}
+.feat-list{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;list-style:none}
+.feat-list li{display:flex;gap:14px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line);font-size:1.08rem;color:var(--ink)}
+.feat-list .tick{color:var(--gold);font-weight:700;flex:none}
+.programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{border:1px solid var(--line);border-radius:3px;padding:30px 28px;background:var(--porcelain);transition:.25s}
+.pcard:hover{border-color:var(--line-gold);box-shadow:0 18px 40px -26px rgba(32,28,23,.26)}
+.pcard h3{font-size:1.4rem;margin-bottom:12px}
+.pcard p{color:var(--ink-2);font-size:.98rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.flow .node{border:1.5px solid var(--gold);color:var(--ink);padding:11px 20px;border-radius:999px;font-weight:600;font-size:.92rem;background:var(--porcelain)}
+.flow .sep{color:var(--gold);font-weight:700;font-size:1.15rem}
+.note{margin-top:26px;font-style:italic;color:var(--ink-2);font-size:1.04rem}
 .benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .ben{border:1px solid var(--line);border-radius:3px;padding:28px 26px;background:var(--porcelain);transition:.25s}
 .ben:hover{border-color:var(--line-gold);box-shadow:0 18px 40px -26px rgba(32,28,23,.26)}
@@ -94,7 +107,7 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.05;letter-spacing
 .ft a{color:var(--gold)}
 
 @media(max-width:760px){
-  .benefits,.steps-grid{grid-template-columns:1fr}
+  .benefits,.steps-grid,.feat-list,.programs-grid{grid-template-columns:1fr}
   .pricebar .btn{margin-left:0;width:100%;justify-content:center}
 }
 </style>
@@ -130,46 +143,33 @@ h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.05;letter-spacing
 document.getElementById('year').textContent=new Date().getFullYear();
 
 const DATA={
- "hop-tac":{kind:"Dịch vụ",title:"Hợp tác kinh doanh cùng Đan Thanh",
-  intro:"Cùng xây dựng chiến dịch tiếp thị liên kết và phát triển nhãn hàng — minh bạch, hiệu quả và đôi bên cùng có lợi.",
-  cta:{text:"Nhắn Zalo để hợp tác"},
-  benefits:[
-   {h:"Tiếp cận đúng tệp khách",p:"Cộng đồng hơn 1 triệu người quan tâm làm đẹp, tài chính và phát triển bản thân."},
-   {h:"Nội dung chuyển đổi cao",p:"Review chân thật, kịch bản bán hàng đã được kiểm chứng qua nhiều chiến dịch."},
-   {h:"Phủ đa nền tảng",p:"TikTok, Facebook, Instagram, YouTube và landing page riêng cho nhãn hàng."},
-   {h:"Báo cáo minh bạch",p:"Số liệu hiệu quả rõ ràng, cam kết kết quả sau mỗi chiến dịch."}],
-  steps:[["Nhắn tin","Gửi thông tin nhãn hàng & mục tiêu chiến dịch."],["Lên kế hoạch","Thanh đề xuất gói hợp tác & nội dung phù hợp."],["Triển khai","Chạy chiến dịch và nhận báo cáo kết quả."]]},
+ "hop-tac":{kind:"Hợp tác kinh doanh",title:"Cùng tạo ra giá trị lớn hơn",
+  intro:"Thanh hợp tác với các thương hiệu, doanh nghiệp và cá nhân có sản phẩm tốt, tệp khách hàng phù hợp và mong muốn tăng trưởng dài hạn.",
+  cta:{text:"Đề xuất hợp tác"},
+  list:{heading:"Hình thức hợp tác",items:["Phân phối & phát triển sản phẩm","Affiliate / Revenue Sharing","Đồng triển khai chiến dịch bán hàng","Hợp tác nội dung & thương hiệu cá nhân","Kết nối đối tác và nguồn lực"]},
+  flow:{heading:"Cách thức",steps:["Gửi đề xuất","Đánh giá mức độ phù hợp","Thống nhất mô hình & KPI","Triển khai"]}},
 
- "co-van":{kind:"Dịch vụ",title:"Cố vấn doanh nghiệp & thương hiệu cá nhân",
-  intro:"Đồng hành cùng chủ doanh nghiệp vừa và nhỏ xây dựng thương hiệu, hệ thống bán hàng và tăng trưởng bền vững.",
-  cta:{text:"Đặt lịch tư vấn"},
-  benefits:[
-   {h:"Định vị thương hiệu",p:"Tìm ra điểm khác biệt và thông điệp cốt lõi cho doanh nghiệp của bạn."},
-   {h:"Chiến lược nội dung & bán hàng",p:"Lộ trình nội dung và phễu bán hàng giúp tăng chuyển đổi."},
-   {h:"Xây kênh KOL/KOC",p:"Hướng dẫn phát triển kênh và cộng đồng trung thành."},
-   {h:"Đồng hành 1-1",p:"Cố vấn riêng theo tình hình thực tế của từng doanh nghiệp."}],
-  steps:[["Khảo sát","Thanh tìm hiểu hiện trạng & mục tiêu của bạn."],["Chiến lược","Nhận lộ trình & kế hoạch hành động cụ thể."],["Đồng hành","Triển khai và tối ưu theo từng giai đoạn."]]},
+ "co-van":{kind:"Cố vấn",title:"Biến vấn đề phức tạp thành kế hoạch rõ ràng",
+  intro:"Dành cho cá nhân, founder và doanh nghiệp đang cần một góc nhìn bên ngoài để xác định đúng vấn đề và hướng đi tiếp theo.",
+  cta:{text:"Đặt lịch cố vấn"},
+  list:{heading:"Nội dung cố vấn",items:["Chiến lược kinh doanh","Thương hiệu & định vị","Marketing & bán hàng","Thương hiệu cá nhân","Vận hành & quản trị công việc"]},
+  flow:{heading:"Cách thức",steps:["Audit hiện trạng","Xác định vấn đề","Chọn ưu tiên","Xây chiến lược","Action Plan"]},
+  note:"Có thể làm việc theo 1 buổi chuyên sâu, theo dự án hoặc đồng hành theo tháng."},
 
- "khoa-hoc":{kind:"Khoá học",title:"Các khoá học của Đan Thanh",
-  intro:"Khoá học thực chiến về kỷ luật bản thân, tài chính cá nhân và xây dựng hình ảnh — học xong áp dụng được ngay.",
-  price:{now:"Từ 499.000₫",old:"999.000₫",save:"Ưu đãi có hạn"},
-  cta:{text:"Đăng ký khoá học"},
-  benefits:[
-   {h:"Kỷ luật & thói quen",p:"Xây dựng hệ thống thói quen bền vững trong 90 ngày."},
-   {h:"Tài chính cá nhân",p:"Quản lý thu chi, tiết kiệm và bắt đầu tạo thu nhập thêm."},
-   {h:"Xây dựng hình ảnh",p:"Phong cách, nội dung và thương hiệu cá nhân từ con số 0."},
-   {h:"Học trọn đời",p:"Tài liệu, video và cộng đồng hỗ trợ không giới hạn thời gian."}],
-  steps:[["Đăng ký","Chọn khoá học phù hợp và thanh toán."],["Vào học","Truy cập bài giảng & tài liệu ngay lập tức."],["Áp dụng","Thực hành theo lộ trình và nhận hỗ trợ."]]},
+ "khoa-hoc":{kind:"Các khóa học",title:"Học theo lộ trình, không học lan man",
+  intro:"Các chương trình tập trung vào 3 năng lực quan trọng: Tài chính – Ngoại ngữ – Kỷ luật.",
+  cta:{text:"Xem các khóa học"},
+  programs:[
+   {name:"CFA Level 1 → 2 → 3",desc:"Lộ trình học, kiến thức trọng tâm, luyện đề và theo dõi tiến độ."},
+   {name:"IELTS 3.0 → 8.0",desc:"Chia nhỏ từng giai đoạn để nâng Listening, Reading, Writing và Speaking."},
+   {name:"Kỷ luật",desc:"Xây thói quen, quản lý thời gian, chống trì hoãn và hoàn thành mục tiêu."}],
+  flow:{heading:"Cách học",steps:["Roadmap","Checklist","Practice","Tracking","Review"]}},
 
- "booking":{kind:"Booking",title:"Booking Đan Thanh",
-  intro:"Mời Thanh làm diễn giả, KOL/KOC cho sự kiện, chiến dịch truyền thông và các hoạt động của nhãn hàng.",
+ "booking":{kind:"Booking",title:"Speaker · KOL/KOC · Brand Collaboration",
+  intro:"Thanh nhận booking cho các sự kiện và chiến dịch phù hợp với hình ảnh cá nhân và định hướng nội dung.",
   cta:{text:"Gửi yêu cầu booking"},
-  benefits:[
-   {h:"Diễn giả sự kiện",p:"Chia sẻ truyền cảm hứng về kỷ luật, tài chính và phát triển bản thân."},
-   {h:"KOL/KOC review",p:"Trải nghiệm & review sản phẩm chân thật, đúng tệp khách hàng."},
-   {h:"Chiến dịch truyền thông",p:"Đồng hành cùng nhãn hàng trong các chiến dịch dài hạn."},
-   {h:"Hợp tác linh hoạt",p:"Nhiều hình thức & mức ngân sách phù hợp với bạn."}],
-  steps:[["Gửi yêu cầu","Cung cấp thời gian, hình thức & ngân sách."],["Xác nhận","Thanh phản hồi & chốt lịch cùng bạn."],["Thực hiện","Tham gia sự kiện/chiến dịch theo kế hoạch."]]},
+  list:{heading:"Hình thức",items:["Diễn giả / Speaker","Workshop / Talkshow","Panel / Guest Speaker","KOL/KOC","Video / Social Content","Livestream","Brand Campaign"]},
+  flow:{heading:"Cách thức",steps:["Gửi Brief","Xác nhận mức độ phù hợp","Chốt nội dung, timeline & deliverables","Báo giá","Triển khai"]}},
 
  "hoc-tap":{kind:"Đồ dùng chất lượng",title:"Đồ dùng học tập được Thanh tuyển chọn",
   intro:"Những món đồ giúp bạn tập trung, kỷ luật và học tập hiệu quả hơn mỗi ngày — đều được Thanh dùng và tin tưởng.",
@@ -304,6 +304,18 @@ if(d.price){html+=`<div class="pricebar"><div class="container inner">
   <span class="now">${esc(d.price.now)}</span>${d.price.old?`<span class="old">${esc(d.price.old)}</span>`:""}
   ${d.price.save?`<span class="save">${esc(d.price.save)}</span>`:""}
   <a href="#contact" class="btn btn-gold">${esc(d.cta.text)} →</a></div></div>`;}
+
+if(d.list){html+=`<section class="sec"><div class="container">
+  <h2 class="sub-h">${esc(d.list.heading)}</h2>
+  <ul class="feat-list">`+d.list.items.map(it=>`<li><span class="tick">✓</span><span>${esc(it)}</span></li>`).join("")+`</ul></div></section>`;}
+
+if(d.programs){html+=`<section class="sec"><div class="container">
+  <h2 class="sub-h">Chương trình đào tạo</h2>
+  <div class="programs-grid">`+d.programs.map(p=>`<div class="pcard"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p></div>`).join("")+`</div></div></section>`;}
+
+if(d.flow){html+=`<section class="sec steps"><div class="container">
+  <h2 class="sub-h">${esc(d.flow.heading)}</h2>
+  <div class="flow">`+d.flow.steps.map((s,i)=>`${i?'<span class="sep">→</span>':''}<span class="node">${esc(s)}</span>`).join("")+`</div>`+(d.note?`<p class="note">${esc(d.note)}</p>`:"")+`</div></section>`;}
 
 if(d.benefits){html+=`<section class="sec"><div class="container">
   <div class="eyebrow">Bạn nhận được gì</div><h2>Điểm nổi bật</h2>
