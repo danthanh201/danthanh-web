@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nguyễn Khắc Đan Thanh — Tác giả · Diễn giả · Podcast</title>
+<meta name="description" content="Trang chính thức của Nguyễn Khắc Đan Thanh — tác giả, diễn giả và người dẫn podcast. Công cụ đơn giản giúp bạn tin vào chính mình." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23e9e6dc'/%3E%3Ccircle cx='40' cy='50' r='24' fill='%231f3bd4'/%3E%3Ccircle cx='60' cy='50' r='24' fill='%23ff3d8b' fill-opacity='.82'/%3E%3C/svg%3E" />
+<!-- Open Graph: hiển thị đẹp khi chia sẻ link lên Facebook/Zalo -->
+<meta property="og:title" content="Nguyễn Khắc Đan Thanh — Tác giả · Diễn giả · Podcast" />
+<meta property="og:description" content="Công cụ đơn giản giúp bạn tin vào chính mình và tạo ra sự thay đổi thật sự." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#e9e6dc;
+  --paper-2:#e2dece;
+  --ink:#141310;
+  --ink-2:#3f3a31;
+  --blue:#1f3bd4;
+  --pink:#ff3d8b;
+  --blue-soft:#c9d0f6;
+  --line:#141310;
+  --max:1200px;
+  --disp:"Bricolage Grotesque",-apple-system,system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
+  background-image:radial-gradient(var(--ink) .5px,transparent .5px);background-size:5px 5px}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 34px;position:relative;z-index:2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--pink);color:var(--paper)}
+
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;font-weight:700}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:9px;margin-bottom:22px}
+.eyebrow::before{content:"◈";color:var(--pink)}
+h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:.96;letter-spacing:-.02em;text-wrap:balance}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 26px;font-family:var(--mono);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;transition:.2s;cursor:pointer;border:2px solid var(--ink);background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--pink);border-color:var(--pink);color:var(--paper);transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--blue);border-color:var(--blue);color:var(--paper);box-shadow:4px 4px 0 var(--ink)}
+.btn .arw{transition:transform .2s}
+.btn:hover .arw{transform:translateX(4px)}
+
+/* header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:60;border-bottom:2px solid transparent;transition:.3s}
+.site-header.scrolled{background:var(--paper);border-bottom-color:var(--ink)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:var(--disp);font-size:1.45rem;font-weight:800;letter-spacing:-.03em}
+.logo b{color:var(--pink)}
+.nav{display:flex;gap:30px;align-items:center}
+.nav a{font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--pink);transition:.22s}
+.nav a:hover::after{width:100%}
+.nav .nav-cta{background:var(--ink);color:var(--paper);padding:10px 16px}
+.nav .nav-cta:hover{background:var(--blue)}
+.nav .nav-cta::after{display:none}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:70}
+.nav-toggle span{width:26px;height:2.5px;background:var(--ink);transition:.3s}
+
+/* hero */
+.hero{padding:132px 0 48px;position:relative}
+.hero .tag-row{display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:9px 0;margin-bottom:44px}
+.hero .tag-row .mono{color:var(--ink-2)}
+.hero-grid{display:grid;grid-template-columns:1fr .62fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(3.4rem,11.5vw,9.5rem);font-weight:800;letter-spacing:-.045em}
+.hero h1 .l1{color:var(--ink);display:block}
+.hero h1 .l2{display:block;color:var(--ink);
+  text-shadow:3px 3px 0 var(--pink),-3px -3px 0 var(--blue)}
+.hero .sub{max-width:52ch;font-size:1.15rem;color:var(--ink-2);margin:30px 0 0;line-height:1.5}
+.hero-side{display:flex;flex-direction:column;gap:22px}
+.portrait{position:relative;aspect-ratio:3/4;border:2px solid var(--ink);overflow:hidden;background:var(--blue)}
+.portrait .duo{position:absolute;inset:0;
+  background:
+   repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.12) 3px 4px),
+   radial-gradient(80% 60% at 60% 25%,var(--pink) 0%,transparent 55%),
+   linear-gradient(150deg,var(--blue),#0e2299)}
+.portrait .duo::after{content:"";position:absolute;inset:0;mix-blend-mode:screen;opacity:.55;
+  background:radial-gradient(60% 50% at 35% 80%,var(--pink),transparent 60%)}
+.portrait .initials{position:absolute;inset:0;display:flex;align-items:flex-end;padding:22px;z-index:2}
+.portrait .initials span{font-family:var(--disp);font-weight:800;font-size:4rem;color:var(--paper);line-height:.82;letter-spacing:-.03em}
+.portrait .reg{position:absolute;top:12px;right:12px;color:var(--paper);font-size:1.1rem;z-index:2;opacity:.85}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* marquee */
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:13px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.mq-track{display:flex;gap:0;white-space:nowrap;animation:mq 32s linear infinite;width:max-content}
+.mq-track span{font-family:var(--disp);font-weight:700;font-size:1.05rem;text-transform:uppercase;letter-spacing:.02em;display:inline-flex;align-items:center}
+.mq-track span i{font-style:normal;padding:0 26px}
+.mq-track span em{font-style:normal;color:var(--pink);padding:0 4px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+.section{padding:104px 0}
+.sec-head{margin-bottom:52px}
+.sec-head.center{text-align:center;max-width:680px;margin-inline:auto}
+.sec-head h2{font-size:clamp(2.3rem,5.5vw,4rem)}
+.sec-head .kick{margin-top:16px;color:var(--ink-2);font-size:1.08rem;max-width:54ch}
+.sec-head.center .kick{margin-inline:auto}
+
+/* podcast — printed index */
+.podcast{background:var(--paper-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.pod-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:14px;flex-wrap:wrap}
+.ep-list{border-top:2px solid var(--ink)}
+.episode{display:grid;grid-template-columns:88px 1fr auto;gap:28px;align-items:center;padding:26px 8px;border-bottom:2px solid var(--ink);transition:.22s;cursor:pointer}
+.episode:hover{background:var(--ink);color:var(--paper);padding-left:22px;padding-right:22px}
+.episode .no{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--blue)}
+.episode:hover .no{color:var(--pink)}
+.episode .mid h3{font-family:var(--disp);font-weight:700;font-size:1.6rem;line-height:1.02;margin-bottom:6px}
+.episode .mid p{font-size:.95rem;color:var(--ink-2)}
+.episode:hover .mid p{color:var(--blue-soft)}
+.episode .play{font-family:var(--mono);font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;display:inline-flex;align-items:center;gap:9px}
+.episode .play::before{content:"▶";font-size:.6rem;color:var(--pink)}
+
+/* topics */
+.topics-grid{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--ink)}
+.topic{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:30px 26px;display:flex;flex-direction:column;gap:26px;min-height:168px;justify-content:space-between;transition:.2s}
+.topic:hover{background:var(--blue);color:var(--paper)}
+.topic:nth-child(4n){border-right:none}
+.topic .ic{font-family:var(--mono);font-weight:700;font-size:.8rem;color:var(--pink)}
+.topic .lbl{font-family:var(--disp);font-weight:700;font-size:1.55rem;line-height:.98}
+.topic .go{font-size:1.4rem;transition:.2s;align-self:flex-end}
+.topic:hover .go{transform:translate(4px,-4px)}
+
+/* book */
+.book{background:var(--blue);color:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.book .eyebrow{color:var(--paper)}
+.book .eyebrow::before{color:var(--pink)}
+.book-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.cover{aspect-ratio:2/3;max-width:290px;margin:0 auto;background:var(--paper);border:2px solid var(--ink);padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:10px 10px 0 var(--pink),10px 10px 0 2px var(--ink)}
+.cover .ck{font-family:var(--mono);font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--blue)}
+.cover .ct{font-family:var(--disp);font-weight:800;font-size:3rem;line-height:.9;color:var(--ink);letter-spacing:-.03em}
+.cover .ct em{font-style:normal;color:var(--pink)}
+.cover .ca{font-family:var(--mono);font-weight:700;font-size:.66rem;letter-spacing:.08em;color:var(--ink)}
+.book-text h2{font-size:clamp(2.3rem,5vw,3.6rem)}
+.book-text .desc{font-size:1.12rem;color:var(--blue-soft);margin:22px 0 32px;max-width:46ch}
+.book-stats{display:flex;gap:0;margin-bottom:36px;border-top:2px solid var(--paper);border-bottom:2px solid var(--paper)}
+.book-stats div{padding:18px 26px 18px 0;margin-right:26px;border-right:2px solid rgba(233,230,220,.3)}
+.book-stats div:last-child{border-right:none}
+.book-stats b{font-family:var(--disp);font-weight:800;font-size:2.1rem;display:block;line-height:1;color:var(--pink)}
+.book-stats small{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--paper)}
+.book .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.book .btn:hover{background:var(--pink);border-color:var(--pink);color:var(--paper);box-shadow:4px 4px 0 var(--ink)}
+
+/* newsletter */
+.newsletter{background:var(--ink);color:var(--paper);text-align:center}
+.nl-inner{max-width:640px;margin:0 auto}
+.newsletter .eyebrow{color:var(--pink);justify-content:center}
+.newsletter .eyebrow::before{color:var(--paper)}
+.nl-inner h2{font-size:clamp(2.3rem,5.5vw,4rem)}
+.nl-inner .kick{color:#b8b3a6;font-size:1.1rem;margin-top:18px}
+.signup{display:flex;margin:36px auto 0;max-width:500px;border:2px solid var(--paper)}
+.signup input{flex:1;padding:16px 20px;border:none;background:transparent;color:var(--paper);font-family:var(--mono);font-size:.9rem}
+.signup input::placeholder{color:#8a857a}
+.signup input:focus{outline:none}
+.signup button{border:none;background:var(--pink);color:var(--paper);padding:0 28px;font-family:var(--mono);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:.2s}
+.signup button:hover{background:var(--blue)}
+.nl-note{margin-top:18px;color:var(--pink);font-family:var(--mono);font-size:.82rem;min-height:1.2em}
+
+/* about */
+.about{border-top:2px solid var(--ink)}
+.about-inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:center}
+.about-photo{aspect-ratio:4/5;border:2px solid var(--ink);position:relative;overflow:hidden;background:var(--pink);box-shadow:12px 12px 0 var(--blue)}
+.about-photo .duo{position:absolute;inset:0;
+  background:
+   repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.1) 3px 4px),
+   radial-gradient(70% 55% at 35% 20%,var(--blue) 0%,transparent 55%),
+   linear-gradient(150deg,var(--pink),#c31766)}
+.about-photo .initials{position:absolute;inset:0;display:flex;align-items:flex-end;padding:26px;z-index:2}
+.about-photo .initials span{font-family:var(--disp);font-weight:800;font-size:5rem;color:var(--paper);line-height:.8}
+.about-text h2{font-size:clamp(2.3rem,5vw,3.6rem)}
+.about-text .quote{font-family:var(--disp);font-weight:700;font-size:1.7rem;line-height:1.12;margin:24px 0;letter-spacing:-.01em}
+.about-text .quote em{font-style:normal;color:var(--pink);text-shadow:1.5px 1.5px 0 var(--blue)}
+.about-text p{color:var(--ink-2);margin-bottom:16px;max-width:54ch}
+.sign{font-family:var(--disp);font-weight:800;font-size:1.9rem;margin-top:14px;color:var(--blue)}
+
+/* footer */
+.site-footer{background:var(--ink);color:var(--paper);border-top:2px solid var(--ink);padding:70px 0 34px}
+.foot-top{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:2px solid #33302a}
+.foot-brand .logo{color:var(--paper)}
+.foot-brand p{color:#a19c90;margin-top:16px;max-width:34ch;font-size:.95rem}
+.foot-col h4{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--pink);margin-bottom:18px;font-weight:700}
+.foot-col a{display:block;color:#c4bfb3;margin-bottom:11px;font-size:.92rem;transition:.18s}
+.foot-col a:hover{color:var(--paper);padding-left:6px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px}
+.foot-bottom p{font-family:var(--mono);color:#8a857a;font-size:.72rem;letter-spacing:.04em}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}.mq-track{animation:none}}
+
+/* responsive */
+@media(max-width:940px){
+  .hero-grid,.book-inner,.about-inner{grid-template-columns:1fr;gap:40px}
+  .hero-side{order:-1;max-width:320px}
+  .topics-grid{grid-template-columns:repeat(2,1fr)}
+  .topic:nth-child(4n){border-right:2px solid var(--ink)}
+  .topic:nth-child(2n){border-right:none}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{padding:0 22px}
+  .nav{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:26px;background:var(--paper);transform:translateX(100%);transition:.32s}
+  .nav.open{transform:none}
+  .nav a{font-size:1.05rem}
+  .nav-toggle{display:flex}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .nav-toggle.open span:nth-child(2){opacity:0}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .topics-grid{grid-template-columns:1fr}
+  .topic{border-right:none!important}
+  .episode{grid-template-columns:56px 1fr;gap:16px}
+  .episode .play{display:none}
+  .foot-top{grid-template-columns:1fr}
+  .signup{flex-direction:column;border:none;gap:10px}
+  .signup input,.signup button{border:2px solid var(--paper);padding:15px 18px}
+  .book-stats{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="hdr">
+  <div class="container header-inner">
+    <a href="#top" class="logo">ĐAN<b>·</b>THANH</a>
+    <nav class="nav" id="nav">
+      <a href="#podcast">Podcast</a>
+      <a href="#topics">Chủ đề</a>
+      <a href="#book">Sách</a>
+      <a href="#about">Giới thiệu</a>
+      <a href="#newsletter" class="nav-cta">Bản tin</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="tag-row reveal">
+      <span class="mono">Tác giả · Diễn giả</span>
+      <span class="mono">Podcast hàng tuần</span>
+      <span class="mono">Est. 2014</span>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <div class="eyebrow">Truyền cảm hứng từ Việt Nam</div>
+        <h1><span class="l1">Hãy tin</span><span class="l2">chính mình</span></h1>
+        <p class="sub">Tôi là <strong>Nguyễn Khắc Đan Thanh</strong>. Mỗi tuần tôi chia sẻ những công cụ đơn giản, có cơ sở khoa học, giúp bạn ngừng chần chừ và tạo ra sự thay đổi thật sự.</p>
+        <div class="hero-actions" style="margin-top:32px">
+          <a href="#podcast" class="btn">Nghe Podcast <span class="arw">→</span></a>
+          <a href="#newsletter" class="btn btn-ghost">Nhận bản tin</a>
+        </div>
+      </div>
+      <div class="hero-side reveal">
+        <div class="portrait">
+          <div class="duo"></div>
+          <span class="reg">⌖</span>
+          <div class="initials"><span>ĐAN<br>THANH</span></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);padding-top:10px">
+          <span class="mono" style="color:var(--ink-2)">Người theo dõi</span>
+          <span style="font-family:var(--disp);font-weight:800;font-size:1.6rem">2 triệu+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="mq-track">
+    <span><i>Top Podcast phát triển bản thân</i><em>✦</em><i>Tác giả sách bán chạy</i><em>✦</em><i>Diễn giả TEDx</i><em>✦</em><i>Hàng triệu người lắng nghe</i><em>✦</em></span>
+    <span><i>Top Podcast phát triển bản thân</i><em>✦</em><i>Tác giả sách bán chạy</i><em>✦</em><i>Diễn giả TEDx</i><em>✦</em><i>Hàng triệu người lắng nghe</i><em>✦</em></span>
+  </div>
+</div>
+
+<!-- PODCAST -->
+<section class="section podcast" id="podcast">
+  <div class="container">
+    <div class="pod-top reveal">
+      <div class="sec-head" style="margin:0">
+        <div class="eyebrow">Podcast — Tập mới nhất</div>
+        <h2>Nghe mỗi tuần</h2>
+      </div>
+      <a href="#" class="btn btn-ghost">Tất cả các tập <span class="arw">→</span></a>
+    </div>
+    <div class="ep-list reveal">
+      <a class="episode" href="#">
+        <span class="no">№ 128</span>
+        <div class="mid"><h3>Cách bắt đầu lại khi bạn thấy mất phương hướng</h3><p>Ba bước đơn giản để lấy lại động lực và sự rõ ràng.</p></div>
+        <span class="play">Nghe · 42 phút</span>
+      </a>
+      <a class="episode" href="#">
+        <span class="no">№ 127</span>
+        <div class="mid"><h3>Quy tắc 5 giây: Ngừng chần chừ</h3><p>Kỹ thuật giúp bạn hành động trước khi não bộ cản trở.</p></div>
+        <span class="play">Nghe · 38 phút</span>
+      </a>
+      <a class="episode" href="#">
+        <span class="no">№ 126</span>
+        <div class="mid"><h3>Xây dựng sự tự tin thật sự từ bên trong</h3><p>Vì sao tự tin là một kỹ năng, không phải năng khiếu.</p></div>
+        <span class="play">Nghe · 51 phút</span>
+      </a>
+      <a class="episode" href="#">
+        <span class="no">№ 125</span>
+        <div class="mid"><h3>Buông bỏ những gì bạn không kiểm soát được</h3><p>Sống nhẹ nhõm hơn bằng một thay đổi trong tư duy.</p></div>
+        <span class="play">Nghe · 45 phút</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="section topics" id="topics">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <div class="eyebrow" style="justify-content:center">Thư viện chủ đề</div>
+      <h2>Bạn đang cần điều gì hôm nay?</h2>
+      <p class="kick">Chọn một chủ đề để khám phá những tập podcast và bài viết phù hợp nhất với bạn.</p>
+    </div>
+    <div class="topics-grid reveal">
+      <a href="#" class="topic"><span class="ic">01 / Tâm trí</span><span class="lbl">Lo âu</span><span class="go">↗</span></a>
+      <a href="#" class="topic"><span class="ic">02 / Hành động</span><span class="lbl">Động lực</span><span class="go">↗</span></a>
+      <a href="#" class="topic"><span class="ic">03 / Kỷ luật</span><span class="lbl">Thói quen</span><span class="go">↗</span></a>
+      <a href="#" class="topic"><span class="ic">04 / Bản thân</span><span class="lbl">Tự tin</span><span class="go">↗</span></a>
+      <a href="#" class="topic"><span class="ic">05 / Kết nối</span><span class="lbl">Mối quan hệ</span><span class="go">↗</span></a>
+      <a href="#" class="topic"><span class="ic">06 / Cảm xúc</span><span class="lbl">Hạnh phúc</span><span class="go">↗</span></a>
+      <a href="#" class="topic"><span class="ic">07 / Cơ thể</span><span class="lbl">Sức khỏe</span><span class="go">↗</span></a>
+      <a href="#" class="topic"><span class="ic">08 / Nổi bật</span><span class="lbl">Phổ biến</span><span class="go">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="section book" id="book">
+  <div class="container book-inner">
+    <div class="book-cover reveal">
+      <div class="cover">
+        <span class="ck">Sách mới · 2026</span>
+        <span class="ct">Hãy<br><em>Để Họ</em></span>
+        <span class="ca">NGUYỄN KHẮC ĐAN THANH</span>
+      </div>
+    </div>
+    <div class="book-text reveal">
+      <div class="eyebrow">Sách bán chạy №1</div>
+      <h2>Cuốn sách giúp bạn sống nhẹ nhõm hơn</h2>
+      <p class="desc">Một phương pháp đơn giản để ngừng kiểm soát người khác, giải phóng năng lượng và tập trung vào điều thật sự quan trọng với bạn.</p>
+      <div class="book-stats">
+        <div><b>1 triệu+</b><small>bản đã bán</small></div>
+        <div><b>4.9/5</b><small>đánh giá độc giả</small></div>
+        <div><b>№1</b><small>sách bán chạy</small></div>
+      </div>
+      <a href="#" class="btn">Đặt sách ngay <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section newsletter" id="newsletter">
+  <div class="container nl-inner reveal">
+    <div class="eyebrow">Bản tin hàng tuần</div>
+    <h2>Cùng hơn 2 triệu độc giả</h2>
+    <p class="kick">Mỗi tuần một email ngắn: một ý tưởng, một công cụ và một chút động lực. Miễn phí, hủy bất cứ lúc nào.</p>
+    <form class="signup" id="signupForm">
+      <input type="email" name="email" placeholder="email@cua-ban.com" required />
+      <button type="submit">Đăng ký</button>
+    </form>
+    <p class="nl-note" id="signupNote"></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container about-inner">
+    <div class="about-photo reveal">
+      <div class="duo"></div>
+      <div class="initials"><span>ĐT</span></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="eyebrow">Giới thiệu</div>
+      <h2>Về Đan Thanh</h2>
+      <p class="quote">"Bạn không cần trở thành người khác. Bạn chỉ cần dám <em>tin vào chính mình.</em>"</p>
+      <p>Nguyễn Khắc Đan Thanh là tác giả sách bán chạy, diễn giả truyền cảm hứng và người dẫn podcast. Trong hơn một thập kỷ, Đan Thanh đã giúp hàng triệu người tìm lại động lực và tạo ra những thay đổi bền vững.</p>
+      <p>Bằng ngôn ngữ gần gũi cùng những công cụ có cơ sở khoa học, Đan Thanh biến những ý tưởng lớn thành các bước hành động đơn giản mà ai cũng có thể bắt đầu ngay hôm nay.</p>
+      <p class="sign">Đan Thanh</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="logo">ĐAN<b>·</b>THANH</span>
+        <p>Công cụ và câu chuyện giúp bạn tin vào chính mình và thay đổi cuộc sống.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Khám phá</h4>
+        <a href="#podcast">Podcast</a>
+        <a href="#topics">Chủ đề</a>
+        <a href="#book">Sách</a>
+        <a href="#about">Giới thiệu</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kết nối</h4>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year"></span> NGUYỄN KHẮC ĐAN THANH</p>
+      <p>⌖ Thiết kế theo phong cách in Riso</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>20));
+const nav=document.getElementById('nav'),tg=document.getElementById('navToggle');
+tg.addEventListener('click',()=>{nav.classList.toggle('open');tg.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');tg.classList.remove('open')}));
+const form=document.getElementById('signupForm'),note=document.getElementById('signupNote');
+form.addEventListener('submit',e=>{e.preventDefault();if(form.email.value.trim()){note.textContent='✦ Cảm ơn bạn! Kiểm tra email để xác nhận.';form.reset();}});
+document.getElementById('year').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
